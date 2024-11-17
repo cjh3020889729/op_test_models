@@ -3,12 +3,8 @@
 - paddlepaddle==2.3.0
 - paddleslim==2.0.0
 
-## 卷积类: conv2d + depthwise_conv2d
-- paddle2onnx==1.0.0
-- onnx==1.9.0
-- onnxruntime==1.10.0
+## conv2d + depthwise_conv2d+relu+less_equal/than+pool2d
+- paddle2onnx==1.1.0
 
-## 归一化类: batch_norm + layer_norm
+## batch_norm + layer_norm+elementwise_add/mul
 - paddle2onnx==0.9.0
-- onnx==1.9.0
-- onnxruntime==1.10.0
