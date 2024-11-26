@@ -7,6 +7,10 @@ do
 			ONNX_MODEL_DIR="${arg#*=}"
 			shift
 			;;
+	        --tpu_source_dir=*)
+			TPU_SOURCE_DIR="${arg#*=}"
+			shift
+		        ;;
 		*)
 			echo "Unknown parameter: $arg"
 			exit 1
@@ -18,6 +22,13 @@ if [ ! -d "$ONNX_MODEL_DIR" ]; then
 	echo "Error: Directory $ONNX_MODEL_DIR does not exist!"
 	exit 1
 fi
+
+if [ ! -d "$TPU_SOURCE_DIR" ]; then
+	echo "Error: Directory $TPU_SOURCE_DIR does not exist!"
+	exit 1
+fi
+
+source ${TPU_SOURCE_DIR}/envsetup.sh
 
 subdirectories=("$ONNX_MODEL_DIR"/*)
 subdirectories=(${subdirectories[@]})
